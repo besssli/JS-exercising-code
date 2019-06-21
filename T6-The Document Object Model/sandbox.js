@@ -1,18 +1,15 @@
-// const content = document.querySelector('p');
+const article = document.querySelector('article');
+// console.log(article.children);
+// console.log(Array.from(article.children));
+// console.log(article.children);
 
-// console.log(content.classList);
-// content.classList.add('error');
-// content.classList.remove('error');
+// Array.from(article.children).forEach(child =>{
+//     child.classList.add('article-element');
+// });
 
-const paras = document.querySelectorAll('p');
+const title = document.querySelector('h2');
 
-paras.forEach(para =>{
-    if(para.textContent.includes('error')){
-        para.classList.add('error');
-    }else if(para.textContent.includes('succes')){
-        para.classList.add('succes');
-    }
-});
-const title = document.querySelector('.title');
-
-title.classList.toggle('test');
+console.log(title.parentElement);
+console.log(title.parentElement.parentElement);
+console.log(title.nextElementSibling);
+console.log(title.previousElementSibling);
