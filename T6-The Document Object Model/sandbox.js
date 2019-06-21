@@ -1,30 +1,34 @@
-/// get an element by ID
-// const title = document.getElementById('page-title');
-// console.log(title);
+const ul = document.querySelector('ul');
+const button = document.querySelector('button');
 
-/// get an Element by class
-// const errors = document.getElementsByClassName('error');
-// console.log(errors);
-// console.log(errors[0]);
-
-/// get an element by their tag name
-// const paras = document.getElementsByTagName("p");
-// console.log(paras);
-// console.log(paras[1]);
-
-/// Changing page content
-// const para = document.querySelector('p');
-// console.log(para.innerText);
-// para.innerText = 'Hello, little bear.'
-
-// const paras = document.querySelectorAll('p');
-// paras.forEach(para => {
-//     para.innerText += ' ...';
+// button.addEventListener('click',()=>{
+//     console.log('You clicked me -///-');
 // });
-const content = document.querySelector('.content');
-// console.log(content);
-// content.innerHTML += '<h2>THIS IS A NEW H2</h2>';
-const people = ['mario', 'leo', 'jessica'];
-people.forEach(person => {
-    content.innerHTML += `<p>${person}</p>`;
+button.addEventListener('click', () =>{
+    const li = document.createElement('li');
+    li.textContent = 'Something new to do ~';
+    // ul.append(li);
+    ul.prepend(li);
+});
+
+const items = document.querySelectorAll('li');
+
+// items.forEach(item => {
+//     item.addEventListener('click',e =>{
+//         // console.log(e);
+//         // console.log(e.target);
+//         // console.log(item);
+//         // e.target.style.textDecoration = 'line-through';
+//         console.log('event in LI');
+//         e.stopPropagation();// stop event bubble up to UL tag
+//         e.target.remove();
+//     });
+// });
+
+ul.addEventListener('click', e => {
+    // console.log('event in UL');
+    if(e.target.tagName === 'LI'){
+        console.log(e.target);
+        e.target.remove();
+    }
 });
