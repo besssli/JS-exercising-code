@@ -1,30 +1,18 @@
-/// get an element by ID
-// const title = document.getElementById('page-title');
-// console.log(title);
+// const content = document.querySelector('p');
 
-/// get an Element by class
-// const errors = document.getElementsByClassName('error');
-// console.log(errors);
-// console.log(errors[0]);
+// console.log(content.classList);
+// content.classList.add('error');
+// content.classList.remove('error');
 
-/// get an element by their tag name
-// const paras = document.getElementsByTagName("p");
-// console.log(paras);
-// console.log(paras[1]);
+const paras = document.querySelectorAll('p');
 
-/// Changing page content
-// const para = document.querySelector('p');
-// console.log(para.innerText);
-// para.innerText = 'Hello, little bear.'
-
-// const paras = document.querySelectorAll('p');
-// paras.forEach(para => {
-//     para.innerText += ' ...';
-// });
-const content = document.querySelector('.content');
-// console.log(content);
-// content.innerHTML += '<h2>THIS IS A NEW H2</h2>';
-const people = ['mario', 'leo', 'jessica'];
-people.forEach(person => {
-    content.innerHTML += `<p>${person}</p>`;
+paras.forEach(para =>{
+    if(para.textContent.includes('error')){
+        para.classList.add('error');
+    }else if(para.textContent.includes('succes')){
+        para.classList.add('succes');
+    }
 });
+const title = document.querySelector('.title');
+
+title.classList.toggle('test');
