@@ -1,34 +1,16 @@
-const ul = document.querySelector('ul');
-const button = document.querySelector('button');
-
-// button.addEventListener('click',()=>{
-//     console.log('You clicked me -///-');
-// });
-button.addEventListener('click', () =>{
-    const li = document.createElement('li');
-    li.textContent = 'Something new to do ~';
-    // ul.append(li);
-    ul.prepend(li);
+const copy = document.querySelector('.copy-me');
+copy.addEventListener('copy',() => {
+    console.log('OI! My content is copyright!');
 });
 
-const items = document.querySelectorAll('li');
+const box = document.querySelector('.box');
 
-// items.forEach(item => {
-//     item.addEventListener('click',e =>{
-//         // console.log(e);
-//         // console.log(e.target);
-//         // console.log(item);
-//         // e.target.style.textDecoration = 'line-through';
-//         console.log('event in LI');
-//         e.stopPropagation();// stop event bubble up to UL tag
-//         e.target.remove();
-//     });
-// });
+box.addEventListener('mousemove', e => {
+    // console.log(e);
+    // console.log(e.offsetX, e.offsetY);
+    box.textContent = `X pos - ${e.offsetX}, y pos - ${e.offsetY}`;
+});
 
-ul.addEventListener('click', e => {
-    // console.log('event in UL');
-    if(e.target.tagName === 'LI'){
-        console.log(e.target);
-        e.target.remove();
-    }
+document.addEventListener('wheel', e => {
+    console.log(e.pageX, e.pageY);
 });
