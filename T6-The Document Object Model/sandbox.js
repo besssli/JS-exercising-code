@@ -1,16 +1,15 @@
-const copy = document.querySelector('.copy-me');
-copy.addEventListener('copy',() => {
-    console.log('OI! My content is copyright!');
+const button = document.querySelector('button');
+const popup = document.querySelector('.popup-wrapper');
+const close = document.querySelector('.popup-close');
+
+button.addEventListener('click',() => {
+    popup.style.display = 'block';
 });
 
-const box = document.querySelector('.box');
-
-box.addEventListener('mousemove', e => {
-    // console.log(e);
-    // console.log(e.offsetX, e.offsetY);
-    box.textContent = `X pos - ${e.offsetX}, y pos - ${e.offsetY}`;
+close.addEventListener('click', () => {
+    popup.style.display = 'none';
 });
 
-document.addEventListener('wheel', e => {
-    console.log(e.pageX, e.pageY);
+popup.addEventListener('click', () => {
+    popup.style.display = 'none';
 });
