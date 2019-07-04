@@ -1,20 +1,20 @@
-const scores = [10, 30, 15, 25, 50, 40, 5];
+//map methods 
+const prices = [10, 20, 30, 25, 25, 40, 80, 5];
 
-// const filterScores = scores.filter(score => {
-//     return score > 20;
-// });
-
-// console.log(filterScores);
-
-const users = [
-    {name: 'shaun', premium: true},
-    {name: 'yoshi', premium: false},
-    {name: 'mario', premium:false},
-    {name: 'chun-li', premium: true}
+const products = [
+    {name: 'gold star', price: 20},
+    {name: 'mushroom', price:40},
+    {name: 'green shells', price:30},
+    {name: 'banana skin', price:10},
+    {name: 'red shells', price:50}
 ];
 
-const premiumUser = users.filter(user => {
-    return user.premium;
+const saleProducts = products.map( product => {
+    if(product.price > 30){
+        return {name: product.name, price: product.price / 2};
+    }else{
+        return product;
+    }
 });
 
-console.log(premiumUser);
+console.log(saleProducts);
