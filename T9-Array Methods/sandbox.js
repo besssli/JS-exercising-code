@@ -1,20 +1,28 @@
-//map methods 
-const prices = [10, 20, 30, 25, 25, 40, 80, 5];
+// reduce method
+// const scores = [10, 20, 60, 40, 70, 90, 30];
 
-const products = [
-    {name: 'gold star', price: 20},
-    {name: 'mushroom', price:40},
-    {name: 'green shells', price:30},
-    {name: 'banana skin', price:10},
-    {name: 'red shells', price:50}
+// const result = scores.reduce((acc, curr) => {
+//     if(curr > 50){
+//         acc++;
+//     };
+//     return acc;
+// }, 0);
+
+// console.log(result);
+
+
+const scores = [
+    {name: 'mario', score: 50},
+    {name: 'tina', score: 70},
+    {name: 'mario' ,score: 60},
+    {name: 'jashun', score: 45}
 ];
 
-const saleProducts = products.map( product => {
-    if(product.price > 30){
-        return {name: product.name, price: product.price / 2};
-    }else{
-        return product;
-    }
-});
+const marioTotal = scores.reduce((acc, curr) => {
+    if(curr.name === 'mario'){
+        acc += curr.score
+    };
+    return acc;
+}, 0);
 
-console.log(saleProducts);
+console.log(marioTotal);
