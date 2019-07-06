@@ -1,22 +1,20 @@
-// dates & times
+// timestamps
+
+const before = new Date('February 9 2019 3:05:45');
 const now = new Date();
 
-console.log(now);
-console.log(typeof now);
+// console.log(now.getTime(), before.getTime());
 
-// year, months, day, times
-console.log('getFullYear:', now.getFullYear());
-console.log('getMonth:', now.getMonth());
-console.log('getDay:', now.getDay());
-console.log('getDate:', now.getDate());
-console.log('getHours:', now.getHours());
-console.log('getMinutes:', now.getMinutes());
-console.log('getSeconds:', now.getSeconds());
+const diff = now.getTime() - before.getTime();
+console.log(diff);
 
-// timestamps
-console.log('timestamp:', now.getTime());
+const mins = Math.round(diff/ 1000/ 60);
+const hours = Math.round(mins/ 60);
+const days = Math.round(hours/ 24);
 
-//date string
-console.log(now.toDateString());
-console.log(now.toTimeString());
-console.log(now.toLocaleString());
+console.log(mins, hours, days);
+
+// converting timestamp into date object
+const timestamp = 1675938474990;
+
+console.log(new Date(timestamp));
