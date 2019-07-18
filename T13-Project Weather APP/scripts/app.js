@@ -4,10 +4,12 @@ const updateCity = async(city) =>{
     const cityDets = await getCity(city);
     const weather = await getWeather(cityDets.Key);
 
-    return {
-        cityDets: cityDets,
-        weather: weather
-    };
+    //// when property name and value name are the same, it can show like down
+    // return {
+    //     cityDets: cityDets,
+    //     weather: weather
+    // };
+    return { cityDets, weather };
 };
 
 cityForm.addEventListener('submit', e => {
