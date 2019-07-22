@@ -1,25 +1,12 @@
-// store data in local storage
-localStorage.setItem('name', 'mario');
-localStorage.setItem('age', 50);
+const todos = [
+    {text: 'go to the market', author: 'Sally'},
+    {text: 'meet with allen', author: 'bess'},
+    {text: 'swimming', author: 'Diana'}
+];
 
-// get data from local storage
-let name = localStorage.getItem('name');
-let age = localStorage.getItem('age');
+// console.log(JSON.stringify(todos));
+localStorage.setItem('todos', JSON.stringify(todos));
 
-console.log(name, age);
-// updating data
-localStorage.setItem('name', 'nick');
-localStorage.age = 40;
+const stored = localStorage.getItem('todos');
 
-name = localStorage.getItem('name');
-age = localStorage.getItem('age');
-console.log(name, age);
-
-// delete data from local storage
-// localStorage.removeItem('name');
-localStorage.clear();
-
-name = localStorage.getItem('name');
-age = localStorage.getItem('age');
-
-console.log(name, age);
+console.log(JSON.parse(stored));
